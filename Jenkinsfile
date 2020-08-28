@@ -16,5 +16,16 @@ pipeline{
 				echo "Int Test"
 			}
 		}
+	} 
+	post{
+		always {
+			echo "I will run always"
+		}
+		success {
+			echo "I will run when success"
+		}
+		failure {
+			echo "I will run when failure"
+		}
 	}
 }
