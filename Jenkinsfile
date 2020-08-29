@@ -38,7 +38,7 @@ pipeline{
 		stage('Build Docker Image'){
 			steps{
 				script {
-					sh "dockerImage = docker.build('dharmeshnirmal/currency-exchange-devops:${env.Build_TAG}')"
+					dockerImage = docker.build("dharmeshnirmal/currency-exchange-devops:${env.Build_TAG}")
 				}
 			}
 		}
@@ -54,7 +54,7 @@ pipeline{
 		}
 		stage('Deploy'){
 			steps{
-				docker run -d -p 8000:8000 --name=currency-exchange dharmeshnirmal/currency-exchange:${env.Build_TAG}
+				sh "docker run -d -p 8000:8000 --name=currency-exchange dharmeshnirmal/currency-exchange:${env.Build_TAG}"
 			}
 		}
 		
