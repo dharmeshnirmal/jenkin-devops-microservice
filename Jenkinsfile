@@ -52,11 +52,11 @@ pipeline{
 				}
 			}
 		}
-		stage('Deploy'){
-			steps{
-				sh "docker run -d -p 8000:8000 --name=currency-exchange dharmeshnirmal/currency-exchange:${env.Build_TAG}"
-			}
-		}
+		// stage('Deploy'){
+		// 	steps{
+		// 		sh "docker run -d -p 8000:8000 --name=currency-exchange dharmeshnirmal/currency-exchange:${env.Build_TAG}"
+		// 	}
+		// }
 		
 	} 
 	post{
